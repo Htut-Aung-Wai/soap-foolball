@@ -12,11 +12,11 @@
     <xs:element name="UssdResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="foolballs" type="tns:foolball"/>
+                <xs:element name="return" type="xs:string"/>
+                <xs:element name="foolballs" type="tns:foolball" maxOccurs="unbounded" />
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-
 
 
     <xs:complexType name="foolball">

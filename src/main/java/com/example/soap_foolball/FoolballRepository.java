@@ -14,11 +14,14 @@ import java.util.*;
 public class FoolballRepository {
 
     private static final Map<String, Foolball> foolballsMap = new HashMap<>();
-
+    UssdResponse response = new UssdResponse();
 
 
     @PostConstruct
     public void initData() {
+
+        response.setReturn("0|hom nay");
+
         Foolball code0= new Foolball();
         code0.setFoolball("match0");
 
@@ -43,6 +46,23 @@ public class FoolballRepository {
 
         foolballsMap.put(code2.getFoolball(), code2);
 
+        Foolball code3= new Foolball();
+        code3.setFoolball("match3");
+
+        code3.setValue("code3");
+
+        Foolball code4= new Foolball();
+        code4.setFoolball("match4");
+
+        code4.setValue("code4");
+
+        List<Foolball> foolballList = response.getFoolballs();//
+        foolballList.add(code0);
+        foolballList.add(code1);
+        foolballList.add(code2);
+        foolballList.add(code3);
+        foolballList.add(code4);
+
 
     }
 
@@ -57,9 +77,8 @@ public class FoolballRepository {
         return new ArrayList<>(foolballsMap.values());
     }
 
-
-
-
-
+    public UssdResponse getResponse() {
+        return response;
+    }
 }
 
