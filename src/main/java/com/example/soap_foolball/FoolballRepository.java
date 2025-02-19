@@ -13,7 +13,7 @@ import java.util.*;
 @Component
 public class FoolballRepository {
 
-    private static final Map<String, Foolball> foolballsMap = new HashMap<>();
+
     UssdResponse response = new UssdResponse();
 
 
@@ -27,24 +27,17 @@ public class FoolballRepository {
 
         code0.setValue("code0");
 
-
-        foolballsMap.put(code0.getFoolball(), code0);
-
         Foolball code1= new Foolball();
         code1.setFoolball("match1");
 
         code1.setValue("code1");
 
 
-        foolballsMap.put(code1.getFoolball(), code1);
-
         Foolball code2= new Foolball();
         code2.setFoolball("match2");
 
         code2.setValue("code2");
 
-
-        foolballsMap.put(code2.getFoolball(), code2);
 
         Foolball code3= new Foolball();
         code3.setFoolball("match3");
@@ -64,17 +57,6 @@ public class FoolballRepository {
         foolballList.add(code4);
 
 
-    }
-
-    public Foolball findFoolball(String name) {
-        Assert.notNull(name, "The country's name must not be null");
-        return foolballsMap.get(name);
-    }
-
-
-    public List<Foolball> getAllFoolballsAsList() {
-
-        return new ArrayList<>(foolballsMap.values());
     }
 
     public UssdResponse getResponse() {
